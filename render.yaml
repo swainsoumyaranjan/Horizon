@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: my-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    repo: https://github.com/your-username/your-repo
+    branch: main
+    rootDir: backend
+    autoDeploy: true
+    pullRequestPreviewsEnabled: true
+
+  - type: static
+    name: my-frontend
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: build
+    repo: https://github.com/your-username/your-repo
+    branch: main
+    rootDir: frontend
+    autoDeploy: true
+    pullRequestPreviewsEnabled: true
